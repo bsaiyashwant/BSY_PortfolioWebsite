@@ -834,15 +834,36 @@ img {
     border-radius: 8px;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 @media (max-width: 768px) {
     .about-content {
-        grid-template-columns: 1fr;
+        flex-direction: column !important;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-text {
+        order: 1;
     }
 
     .about-image-wrapper {
-        margin: 50px auto 0;
+        max-width: 280px;
+        width: 100%;
+        margin: 0 auto;
+        order: 2;
+    }
+
+    .about-image:hover img,
+    .about-image-wrapper:active img {
+        transform: scale(1.1);
     }
 }
 
