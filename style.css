@@ -834,6 +834,10 @@ img {
     border-radius: 8px;
     object-fit: cover;
     display: block;
+    transform: scale(1.6);
+    /* Default zoom for better face visibility */
+    object-position: 65% 25%;
+    /* Center the person's face */
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -841,6 +845,8 @@ img {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
+    aspect-ratio: 1 / 1.2;
+    /* Ensure consistent framing */
 }
 
 @media (max-width: 768px) {
@@ -855,7 +861,8 @@ img {
     }
 
     .about-image-wrapper {
-        max-width: 280px;
+        max-width: 320px;
+        /* Larger mobile container */
         width: 100%;
         margin: 0 auto;
         order: 2;
@@ -863,8 +870,14 @@ img {
 
     .about-image:hover img,
     .about-image-wrapper:active img {
-        transform: scale(1.1);
+        transform: scale(1.8) !important;
+        /* Zoom in even more on hover */
     }
+}
+
+.about-image:hover img {
+    transform: scale(1.8);
+    /* Zoom in more on hover */
 }
 
 /* =========================================
