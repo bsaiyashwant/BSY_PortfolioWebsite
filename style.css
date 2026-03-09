@@ -450,7 +450,7 @@ img {
     font-size: 30px;
     font-weight: 800;
     color: var(--text-main);
-    letter-spacing: -1px;
+    letter-spacing: 2px;
     z-index: 101;
     text-decoration: none;
     display: flex;
