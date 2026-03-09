@@ -764,12 +764,6 @@ img {
     display: inline-block;
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     cursor: default;
-    background: linear-gradient(to right,
-            var(--text-heading) 0%,
-            var(--text-heading) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .hero-title:hover {
