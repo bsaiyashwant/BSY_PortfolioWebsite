@@ -444,6 +444,7 @@ img {
     width: 100%;
 }
 
+
 .nav-logo {
     font-family: var(--font-heading);
     font-size: 30px;
@@ -753,11 +754,64 @@ img {
 }
 
 .hero-title {
-    margin: 0;
-    color: var(--text-main);
     font-size: clamp(40px, 8vw, 80px);
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 800;
+    color: var(--text-heading);
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    position: relative;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: default;
+    background: linear-gradient(to right,
+            var(--text-heading) 0%,
+            var(--text-heading) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-title:hover {
+    letter-spacing: 2px;
+    background: linear-gradient(to right,
+            var(--accent) 0%,
+            #3b82f6 50%,
+            var(--text-heading) 100%);
+    background-size: 200% auto;
+    animation: textShimmer 2s linear infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        2px 0 var(--accent),
+        -2px 0 #3b82f6;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.hero-title:hover::after {
+    width: 100%;
+}
+
+@keyframes textShimmer {
+    0% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: -100% center;
+    }
 }
 
 .hero-subtitle {
