@@ -1,4 +1,4 @@
-﻿/* =========================================
+/* =========================================
    Variables & Theme
    ========================================= */
 :root {
@@ -1225,12 +1225,33 @@ img {
 
 .project-status {
     color: var(--text-muted);
-    font-size: 14px;
-    font-style: italic;
-    background: var(--bg-tertiary);
-    padding: 6px 12px;
-    border-radius: 4px;
+    font-size: 13px;
+    background: var(--bg-secondary);
+    padding: 6px 14px;
+    border-radius: 20px;
     letter-spacing: 0.5px;
+    border: 1px solid var(--border);
+    display: inline-flex;
+    align-items: center;
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+.project-status.wip {
+    border-color: var(--accent-glow);
+    color: var(--accent);
+    background: rgba(16, 185, 129, 0.05);
+    font-weight: 500;
+}
+
+.project-status.wip i {
+    margin-right: 8px;
+    animation: rotate-gear 4s linear infinite;
+}
+
+@keyframes rotate-gear {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .project-image {
